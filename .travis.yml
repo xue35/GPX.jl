@@ -1,0 +1,16 @@
+language: julia
+julia:
+  - 1.0
+
+os:
+  - linux
+  - osx
+
+notification:
+  email: false
+
+script:
+  - julia --project --check-bounds=yes -e 'using Pkg; Pkg.build("GPX"); Pkg.test("GPX", coverage=true)'
+
+after_success:
+  - julia -e 'cd(Pkg.dir("GPX")); Pkg.add("GPX"); using Coverage; Codecov.submit(Codecov.process_folder())'

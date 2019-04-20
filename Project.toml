@@ -1,0 +1,10 @@
+name = "GPX"
+uuid = "16f203aa-ef21-55ed-8d10-46bf21d5e6a8"
+authors = ["Jianmin Xue@rpi3b <xue35@icloud.com>"]
+version = "0.1.0"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
